@@ -26,17 +26,58 @@
 	\newcommand{\Q}{\mathbb{Q}}
 	\newcommand{\Z}{\mathbb{Z}}
 	\newcommand{\N}{\mathbb{N}}
-	\section*{Question 1}
+	\section*{Exercise 4.3}
 	
-Prove $\R$ R
-\begin{align}
-	\N
-\end{align}	
-	
-	
-	
-	
-	
-	
+Prove that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges then so does $\sum\limits_{k=1}^{\infty}a_k$.
+
+\bigskip
+
+\paragraph{The proof} ~\\
+
+Let us assume $\sum\limits_{k=1}^{\infty}|a_k| = L$ where L is some real number. ~\\
+
+There are 3 cases to this question:
+\begin{enumerate}
+	\item $(a_k)$ has finite number of negatives
+	\item $(a_k)$ has finite number of positives
+	\item $(a_k)$ has infinitely many positives and negatives
+\end{enumerate} 
+
+\paragraph{Case 1 - Finite number of negatives} ~\\
+
+Let us assume that $(a_{k_i})$ is the set containing all the negatives. We know it is of a finite size and hence $\sum |a_{k_i}|=\sum\limits_{n \in (k_i)} |a_n|$ is some finite number N. 
+\[
+\sum\limits_{n \in (n_i)} |a_k| = N
+\]
+\[
+-\sum\limits_{n \in (n_i)} a_k = N.  
+\]
+\[
+\sum\limits_{n \in (n_i)} a_k = -N    
+\]
+Because $(k_i)$ is a finite set we can write the following:
+\[
+\sum\limits_{k=1}^{\infty}|a_k| = \sum\limits_{n \in (k_i)} |a_n| + \sum\limits_{n \notin (k_i)} |a_{n}| = L
+\]
+\[
+\sum\limits_{k=1}^{\infty}|a_k| = N + \sum\limits_{n \notin (k_i)} a_{n} = L
+\]
+\[
+\sum\limits_{n \notin (k_i)} a_{n} = L - N
+\]
+Finally, combining the facts 
+\[
+\sum\limits_{k=1}^{\infty}a_k = \sum\limits_{n \in (k_i)} a_n + \sum\limits_{n \notin (k_i)} a_{n} = -N + L - N = L - 2N
+\]
+
+and so $\sum\limits_{k=1}^{\infty}a_k$ converges.
+
+\paragraph{Case 2 - Finite number if positives} ~\\
+
+The proof for this case is very similar to Case 1.
+
+\paragraph{Case 3 - Infinite number of negatives and positives} ~\\
+
+Notice that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then $\sum\limits_{k=1}^{\infty}|a_k|$ is bounded by some $C>0$. Let $a_{k_n}$ be the positive subsequence of $a_k$, and let $a_{k_m}$ be the negative subsequence of $a_k$. Notice that $\sum\limits_{n=1}^{\infty}a_{k_n}$ must also be bounded by C, and since $a_{k_n}>0$ for all n, $\sum\limits_{n=1}^{\infty}a_{k_n}$ converges, and since $\sum\limits_{n=1}^{\infty}a_{k_m}$ is bounded by $-C$ and each $a_{k_m}<0$ then $\sum\limits_{m=1}^{\infty}a_{k_m}$ converges as well. So by limits laws, the series $\sum\limits_{k=1}^{\infty}a_k$ must also converge. 
 	
 \end{document}
