@@ -22,11 +22,13 @@
 \newcolumntype{2}{D{.}{}{2.0}}
 
 \begin{document}
-	\newcommand{\R}{\mathbb{R}}
-	\newcommand{\Q}{\mathbb{Q}}
-	\newcommand{\Z}{\mathbb{Z}}
-	\newcommand{\N}{\mathbb{N}}
-	\section*{Exercise 4.3}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+\section*{Exercise 4.3}
 	
 Prove that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges then so does $\sum\limits_{k=1}^{\infty}a_k$.
 
@@ -46,29 +48,25 @@ There are 3 cases to this question:
 \paragraph{Case 1 - Finite number of negatives} ~\\
 
 Let us assume that $(a_{k_i})$ is the set containing all the negatives. We know it is of a finite size and hence $\sum |a_{k_i}|=\sum\limits_{n \in (k_i)} |a_n|$ is some finite number N. 
-\[
-\sum\limits_{n \in (n_i)} |a_k| = N
-\]
-\[
--\sum\limits_{n \in (n_i)} a_k = N.  
-\]
-\[
-\sum\limits_{n \in (n_i)} a_k = -N    
-\]
+
+\begin{align*}
+\sum\limits_{n \in (k_i)} |a_n| &= N\\
+-\sum\limits_{n \in (k_i)} a_n &= N\\
+\sum\limits_{n \in (k_i)} a_n &= -N \numberthis \label{eq1}
+\end{align*}
+
 Because $(k_i)$ is a finite set we can write the following:
-\[
-\sum\limits_{k=1}^{\infty}|a_k| = \sum\limits_{n \in (k_i)} |a_n| + \sum\limits_{n \notin (k_i)} |a_{n}| = L
-\]
-\[
-\sum\limits_{k=1}^{\infty}|a_k| = N + \sum\limits_{n \notin (k_i)} a_{n} = L
-\]
-\[
-\sum\limits_{n \notin (k_i)} a_{n} = L - N
-\]
-Finally, combining the facts 
-\[
-\sum\limits_{k=1}^{\infty}a_k = \sum\limits_{n \in (k_i)} a_n + \sum\limits_{n \notin (k_i)} a_{n} = -N + L - N = L - 2N
-\]
+
+\begin{align*}
+\sum\limits_{k=1}^{\infty}|a_k| &= \sum\limits_{n \in (k_i)} |a_n| + \sum\limits_{n \notin (k_i)} |a_{n}| = L\\
+\sum\limits_{k=1}^{\infty}|a_k| &= N + \sum\limits_{n \notin (k_i)} a_{n} = L\\
+\sum\limits_{n \notin (k_i)} a_{n} &= L - N \numberthis \label{eq2}
+\end{align*}
+
+Finally, combining \eqref{eq1} and \eqref{eq2}
+
+$\sum\limits_{k=1}^{\infty}a_k = \sum\limits_{n \in (k_i)} a_n + \sum\limits_{n \notin (k_i)} a_{n} = -N + L - N = L - 2N$
+
 
 and so $\sum\limits_{k=1}^{\infty}a_k$ converges.
 
@@ -78,6 +76,84 @@ The proof for this case is very similar to Case 1.
 
 \paragraph{Case 3 - Infinite number of negatives and positives} ~\\
 
-Notice that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then $\sum\limits_{k=1}^{\infty}|a_k|$ is bounded by some $C>0$. Let $a_{k_n}$ be the positive subsequence of $a_k$, and let $a_{k_m}$ be the negative subsequence of $a_k$. Notice that $\sum\limits_{n=1}^{\infty}a_{k_n}$ must also be bounded by C, and since $a_{k_n}>0$ for all n, $\sum\limits_{n=1}^{\infty}a_{k_n}$ converges, and since $\sum\limits_{n=1}^{\infty}a_{k_m}$ is bounded by $-C$ and each $a_{k_m}<0$ then $\sum\limits_{m=1}^{\infty}a_{k_m}$ converges as well. So by limits laws, the series $\sum\limits_{k=1}^{\infty}a_k$ must also converge. 
-	
+Notice that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then $\sum\limits_{k=1}^{\infty}|a_k|$ is bounded by some $C>0$. Let $a_{k_n}$ be the positive subsequence of $a_k$, and let $a_{k_m}$ be the negative subsequence of $a_k$. Notice that $\sum\limits_{n=1}^{\infty}a_{k_n}$ must also be bounded by C, and since $a_{k_n}>0$ for all n, $\sum\limits_{n=1}^{\infty}a_{k_n}$ converges, and since $\sum\limits_{n=1}^{\infty}a_{k_m}$ is bounded by $-C$ and each $a_{k_m}<0$ then $\sum\limits_{m=1}^{\infty}a_{k_m}$ converges as well. So by limits laws, the series $\sum\limits_{k=1}^{\infty}a_k$ must also converge.
+
+
+\section*{Exercise 4.13a} 
+
+Prove that if $(ka_k)$ coverges to $L:L\neq0$, then $\sum\limits_{k=1}^{\infty}a_k$ diverges. Give example to show converse is false.
+
+\bigskip
+
+\paragraph{The proof}~\\
+
+We know $(ka_k)\rightarrow L:L\neq0$, so for fix $\epsilon>0$ there exists $N\in\N:$ 
+\begin{align*}
+	{|ka_k - L| < \epsilon}\\
+	{-\epsilon<ka_k-L<\epsilon}\\
+	{L-\epsilon<ka_k<\epsilon+L}\\
+	{\frac{L-\epsilon}{k}<a_k<\frac{L+\epsilon}{k}}	
+\end{align*} 	
+For all $k>N$. Without loss of generality, Let $L>0$ and $\epsilon<L$. then the following is true:
+\begin{align*}
+		{\frac{L-\epsilon}{k}<a_k<\frac{L+\epsilon}{k}}\\
+		{0<\frac{L-\epsilon}{k}<a_k<\frac{L+\epsilon}{k}}\\
+		{0<\frac{L-\epsilon}{k}<a_k}
+\end{align*}
+For all $k>N$. And since $\sum\limits_{k=1}^{\infty}\frac{L-\epsilon}{K}$ diverges, then so does $\sum\limits_{k=1}^{\infty}a_k$.
+\paragraph{The Converse Example} ~\\
+
+Let $a_k=1$, then $(ka_k)=k\rightarrow\infty$
+
+\section*{Exercise 4.13b}
+
+Prove that if $(k^2 a_k)$ coverges to $L:L\in\R$, then $\sum\limits_{k=1}^{\infty}a_k$ converges. Give example to show converse is false.
+
+\paragraph{The proof} ~\\
+
+ Let us assume $(k^2a_k) \rightarrow L:L\in\R$. `\\
+ 
+ There are 3 cases to this question:
+ \begin{enumerate}
+ 	\item $L>0$
+ 	\item $L=0$
+ 	\item $L<0$
+ \end{enumerate}
+
+\paragraph{Case 1 - $L>0$} ~\\
+
+We know $(k^2a_k)\rightarrow L:L>0$, so if we fix $L>\epsilon>0$, then there exists $N\in\N:$
+\begin{align*}
+	|k^2a_k-L|<\epsilon\\
+	\frac{L-\epsilon}{k^2}<a_k<\frac{L+\epsilon}{k^2}\\
+	0<\frac{L-\epsilon}{k^2}<a_k<\frac{L+\epsilon}{k^2}\\
+	0<a_k<\frac{L+\epsilon}{k^2}
+\end{align*}
+For all $K>N$. Since $\sum\limits_{k=1}^{\infty}\frac{L+\epsilon}{k^2}$ converges, then by comparison law, so does $\sum\limits_{k=1}^{\infty}a_k$
+
+\paragraph{Case 2 - $L<0$} ~\\
+
+This proof is very similar to Case 1.
+
+\paragraph{Case 3 - $L=0$} ~\\
+
+If we prove that $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then so does $\sum\limits_{k=1}^{\infty}a_k$.
+Notice that for $\epsilon>0$ there exists N:
+\begin{align*}
+	{|k^2a_k-L|<\epsilon}\\
+	{|K^2a_k|<\epsilon}\\
+	{-\epsilon<k^2a_k<\epsilon}\\
+	{-\frac{\epsilon}{k^2}}<a_k<\frac{\epsilon}{k^2}
+\end{align*}
+so:
+\begin{align*}
+	0<|a_k|<\frac{\epsilon}{k^2}
+\end{align*}
+for all $k>N$. Since $\sum\limits_{k=1}^{\infty}\frac{\epsilon}{k^2}$ converges, by comparison test, so does $\sum\limits_{k=1}^{\infty}|a_k|$, which implies that $\sum\limits_{k=1}^{\infty}a_k$ converges as well.
+
+\paragraph{The converse example} ~\\ 
+
+Same as part a.
+
+
 \end{document}
