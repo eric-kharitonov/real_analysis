@@ -76,7 +76,7 @@ The proof for this case is very similar to Case 1.
 
 \paragraph{Case 3 - Infinite number of negatives and positives} ~\\
 
-Notice that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then $\sum\limits_{k=1}^{\infty}|a_k|$ is bounded by some $C>0$. Let $a_{k_n}$ be the positive subsequence of $a_k$, and let $a_{k_m}$ be the negative subsequence of $a_k$. Notice that $\sum\limits_{n=1}^{\infty}a_{k_n}$ must also be bounded by C, and since $a_{k_n}>0$ for all n, $\sum\limits_{n=1}^{\infty}a_{k_n}$ converges, and since $\sum\limits_{n=1}^{\infty}a_{k_m}$ is bounded by $-C$ and each $a_{k_m}<0$ then $\sum\limits_{m=1}^{\infty}a_{k_m}$ converges as well. So by limits laws, the series $\sum\limits_{k=1}^{\infty}a_k$ must also converge.
+Notice that if $\sum\limits_{k=1}^{\infty}|a_k|$ converges, then $\sum\limits_{k=1}^{\infty}|a_k|$ is bounded by some $C>0$. Let $(a_{k_n})$ be the positive subsequence of $(a_k)$, and let $a_{k_m}$ be the negative subsequence of $(a_k)$. Notice that $\sum\limits_{n=1}^{\infty}a_{k_n}$ must also be bounded by C, and since $a_{k_n}>0$ for all n, $\sum\limits_{n=1}^{\infty}a_{k_n}$ converges, and since $\sum\limits_{n=1}^{\infty}a_{k_m}$ is bounded by $-C$ and each $a_{k_m}<0$ then $\sum\limits_{m=1}^{\infty}a_{k_m}$ converges as well. So by limits laws, the series $\sum\limits_{k=1}^{\infty}a_k$ must also converge.
 
 
 \section*{Exercise 4.13a} 
@@ -155,5 +155,16 @@ for all $k>N$. Since $\sum\limits_{k=1}^{\infty}\frac{\epsilon}{k^2}$ converges,
 
 Same as part a.
 
+\section*{Exercie 15}
+Prove that if $(a_k)$ is a decreasing sequence and converges to 0, then $\sum\limits_{k=1}^{\infty}a_k$ converges if and only if $\sum\limits_{k=1}^{\infty}2^k a_{2^k}$ converges.
+\paragraph{Pf.}
+For the backward direction notice that:
+\begin{align*}
+	\sum\limits_{k=1}^{\infty}a_k &= a_1 + a_2 + a_3 + a_4 + a_5 + a_6 + a_7 + \dots\\
+	&\leq a_1 + a_2 + a_2 + a_4 + a_4 + a_4 + a_4 + \dots\\
+	&= a_1 + \sum\limits_{k=1}^{\infty}2^k a_{2^k}
+\end{align*}
+and since we assumed that $ \sum\limits_{k=1}^{\infty}2^k a_{2^k}$ converges, then so does $a_1 + \sum\limits_{k=1}^{\infty}2^k a_{2^k}$, which by comparison test, follows that $\sum\limits_{k=1}^{\infty}a_k$ converges.\\
+Now for the foreward direction.
 
 \end{document}
