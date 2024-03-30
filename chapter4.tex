@@ -155,7 +155,7 @@ for all $k>N$. Since $\sum\limits_{k=1}^{\infty}\frac{\epsilon}{k^2}$ converges,
 
 Same as part a.
 
-\section*{Exercie 15}
+\section*{Exercise 15}
 Prove that if $(a_k)$ is a decreasing sequence and converges to 0, then $\sum\limits_{k=1}^{\infty}a_k$ converges if and only if $\sum\limits_{k=1}^{\infty}2^k a_{2^k}$ converges.
 \paragraph{Pf.}
 For the backward direction notice that:
@@ -165,6 +165,24 @@ For the backward direction notice that:
 	&= a_1 + \sum\limits_{k=1}^{\infty}2^k a_{2^k}
 \end{align*}
 and since we assumed that $ \sum\limits_{k=1}^{\infty}2^k a_{2^k}$ converges, then so does $a_1 + \sum\limits_{k=1}^{\infty}2^k a_{2^k}$, which by comparison test, follows that $\sum\limits_{k=1}^{\infty}a_k$ converges.\\
-Now for the foreward direction.
+Now for the foreward direction. Notice the following:
+\begin{align*}
+	\sum\limits_{k=1}^{\infty}\frac{2^k}{2}{a_{2^k}} \leq \sum\limits_{k=1}^{\infty}a_k
+\end{align*}
+So, by comparison test, $\sum\limits_{k=1}^{\infty}\frac{2^k}{2}a_{2^k}$ converges, so, by series limit laws, $\sum\limits_{k=1}^{\infty}2^k a_{2^k}$ converges as well.
+
+\section*{Exercise 16}
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
+
